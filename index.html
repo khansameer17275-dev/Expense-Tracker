@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Expense Tracker</h1>
+
+        <!-- Balance section -->
+         <div class="balance-box">
+            <h2>Total Balance: &#8377<span id="balance">0.00</span></h2>
+
+            <div class="summary">
+                <div class="income-box">
+                 <h3>Income</h3>   
+                 <p>&#8377<span id="income">0.00</span></p>
+                </div>
+
+                <div class="expense-box">
+                 <h3>Expense</h3>   
+                 <p>&#8377<span id="expense">0.00</span></p>    
+            </div>
+         </div>
+    </div>
+
+    <!-- Form Section -->
+     <form id="transaction-form">
+        <input type="text" id="title" placeholder="Enter Title" required>
+
+        <input type="number" id="amount" placeholder="Enter Amount" required>
+
+        <select id="type" required>
+            <option value="" disabled selected>Select Type</option>
+            <option value="income">Income</option>
+            <option value="expense">Expense</option>
+        </select>
+
+        <button type="submit">Add Transaction</button>
+     </form>
+
+     <!-- Filter Section -->
+     <div class="filter-section">
+        <button onclick="filterTransactions('all')">All</button>
+        <button onclick="filterTransactions('income')">Income</button>
+        <button onclick="filterTransactions('expense')">Expense</button>
+     </div>
+
+     <!-- Transaction List -->
+      <ul id="transaction-list"></ul>
+      </div>
+
+      <script src="script.js"></script>
+</body>
+</html>
